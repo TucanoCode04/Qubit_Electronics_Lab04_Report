@@ -1,1 +1,64 @@
-\chapter{ok}
+\chapter{Mesh}
+\section{Structure Analysis}
+The device analyzed in this laboratory is a Double Quantum Dot structure fabricated using
+Silicon MOS technology. The overall device has the dimensions as reported in the table \ref{dimensions}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Axis & Length (nm) \\
+\hline
+X & 353 \\
+Y & 273 \\
+Z & 126 \\
+\hline
+\end{tabular}
+\caption{Device Dimensions}
+\label{dimensions}
+\end{table}
+
+The device is divided into different regions determined by the code itself, in order to 
+assign different properties both in terms of phyical caracteristics and in terms of meshing for 
+the calculation of the simulation.\\
+Regarding the mesh sizes, in the code are defined different measures that will be assigned to specific regions:
+\begin{lstlisting}
+        grid_spacing_01				= 1; //nm
+	grid_spacing_02				= grid_spacing_01*2; 
+	grid_spacing_03				= grid_spacing_02*2; 
+	grid_spacing_04				= grid_spacing_03; 
+	grid_spacing_05				= grid_spacing_03*2; 
+\end{lstlisting}
+Each of this parameter will indicates the local characteristic mesh size assigned to the points of the regions that will constitute the device. Of course, the higher the mesh size, the higher the elements size and so the lower of the mesh density, resulting in a lower accuracy when it comes to the perform calcualtions.\\
+Each point is defined as:
+\begin{lstlisting}
+    Point(id) = {x, y, z, lc};
+\end{lstlisting}
+where the last arguement is the one just mentioned.\\
+By analyzing the code, it is possible to indentify the division of the structure, which is shown in table \ref{regions} starting from the bottom to the top,
+with their respective mesh sizes.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Region name & Mesh size (nm) \\
+\hline
+region\_bulk\_bottom & 8 \\
+region\_pre\_quantum\_A/B/C (bottom face)& 2 \\
+region\_pre\_quantum\_A/B/C (top face)& 1 \\
+region\_quantum\_A/B/C & 1 \\
+region\_post\_quantum\_A/B/C & 2\\
+region\_bulk\_top & 2 \\
+region\_bottom\_oxide\_layer & 4 \\
+region\_Y\_gate & 4 \\
+region\_top\_oxide\_layer & 8 \\
+region\_Barrier/Plunger/Reservoir\_X\_gate & 4 \\
+\hline
+\end{tabular}
+\caption{Device regions and mesh sizes}
+\label{regions}
+\end{table}
+
+As we can see, the regions with the highest mesh density are the ones that correponds to the volume of space where the quantum dots are located,
+togheter with the regions right above and right below them. This is obvious, since here we need to calculate the poisson equation with the highest accuracy.
