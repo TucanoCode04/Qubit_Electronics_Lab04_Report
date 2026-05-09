@@ -1,0 +1,139 @@
+\newpage
+\chapter{Poisson}
+\section{Simulation setup}
+
+The Poisson simulation is defined in \texttt{SiMOS\_poisson.py}. The device is
+loaded from the three-dimensional SiMOS mesh and instantiated as an electron
+device,
+\begin{lstlisting}
+d = Device(mesh, conf_carriers="e")
+d.set_temperature(T)
+d.statistics = "FD_approx"
+\end{lstlisting}
+therefore the self-consistent charge density is evaluated for confined electrons
+using a Fermi--Dirac approximation. The operating temperature is
+\[
+    T = \SI{0.015}{\kelvin} = \SI{15}{\milli\kelvin}.
+\]
+
+The electrostatic biases are applied only through the surfaces declared with
+\texttt{new\_gate\_bnd}. The work-function parameter used for all gate
+boundaries is
+\[
+    \Phi_m = \chi_{\mathrm{Si}} + \frac{E_{g,\mathrm{Si}}}{2},
+\]
+which corresponds to a mid-gap silicon reference. The voltages used in the
+simulation are summarized in Table~\ref{tab:poisson_voltages}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\raggedright\arraybackslash}p{5.5cm}|c|>{\raggedright\arraybackslash}p{6.1cm}|}
+\hline
+Boundary & Voltage (V) & Role \\
+\hline
+\texttt{surface\_Y1\_gate} & 0.535 & Longitudinal confinement gate. \\
+\hline
+\texttt{surface\_Y2\_gate} & 0.535 & Longitudinal confinement gate, biased symmetrically with Y1. \\
+\hline
+\texttt{surface\_Reservoir\_L\_X\_gate} & 1.300 & Left reservoir accumulation. \\
+\hline
+\texttt{surface\_Reservoir\_R\_X\_gate} & 1.300 & Right reservoir accumulation. \\
+\hline
+\texttt{surface\_Barrier\_L\_X\_gate} & 0.040 & Left tunnel barrier. \\
+\hline
+\texttt{surface\_Barrier\_M\_X\_gate} & 0.400 & Inter-dot barrier. \\
+\hline
+\texttt{surface\_Barrier\_R\_X\_gate} & 0.040 & Right tunnel barrier. \\
+\hline
+\texttt{surface\_Plunger\_L\_X\_gate} & 0.700 & Left dot plunger. \\
+\hline
+\texttt{surface\_Plunger\_R\_X\_gate} & 0.7001990578 & Right dot plunger, detuned by about \SI{199}{\micro\volt}. \\
+\hline
+\end{tabular}
+\caption{Gate boundary voltages used in the Poisson simulation.}
+\label{tab:poisson_voltages}
+\end{table}
+
+No ohmic boundary is active in the script, since the two corresponding
+\texttt{new\_ohmic\_bnd} lines are commented. The reservoirs are instead
+controlled electrostatically by the reservoir gates.
+
+\section{Materials and regions}
+
+The material assignment is performed region by region before the boundary
+conditions are imposed. The code uses three QTCAD material objects, reported in
+Table~\ref{tab:poisson_materials}. The material choice enters the Poisson
+problem mainly through the dielectric response and, in the semiconductor, through
+the band parameters and carrier statistics used to compute the charge density.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{8.0cm}|}
+\hline
+QTCAD material & Physical material & Use in the device \\
+\hline
+\texttt{mt.Si} & Silicon & Semiconductor body, reservoirs, and quantum regions. Some silicon regions are n-doped with \(N_D=5\times10^{24}\,\mathrm{m^{-3}}\), corresponding to \(5\times10^{18}\,\mathrm{cm^{-3}}\); the p-doping is set to zero. \\
+\hline
+\texttt{mt.SiO2} & Silicon dioxide & Oxide regions immediately above the quantum layer and in the upper central stack. These regions act as insulating dielectrics and do not contribute mobile carriers. \\
+\hline
+\texttt{mt.Al2O3} & Aluminum oxide & Top oxide and gate-stack regions. The metallic action of the gates is not represented by assigning a metal material to the volume, but by imposing Dirichlet gate boundary conditions on the gate surfaces. \\
+\hline
+\end{tabular}
+\caption{Materials appearing in \texttt{SiMOS\_poisson.py}.}
+\label{tab:poisson_materials}
+\end{table}
+
+The quantum-dot region used by the solver is
+\[
+\texttt{dot\_region} =
+\{\texttt{region\_pre\_quantum\_B\_mid},
+\texttt{region\_quantum\_B\_mid},
+\texttt{region\_post\_quantum\_B\_mid}\}.
+\]
+This central stack is also passed to \texttt{d.set\_dot\_region}, so classical
+charge is suppressed there. This is consistent with treating the dot as a region
+where only few-electron quantum states should be described later, rather than as
+a classical electron gas that screens the gates.
+
+\section{Poisson solver parameters}
+
+The solver is instantiated with a geometry file,
+\begin{lstlisting}
+p = PoissonSolver(d, solver_params=params_poisson, geo_file=path_geo)
+\end{lstlisting}
+so QTCAD uses the adaptive-mesh non-linear Poisson solver. The meaning of each
+parameter in the script is summarized in Table~\ref{tab:poisson_params}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3.2cm}|>{\raggedright\arraybackslash}p{2.2cm}|>{\raggedright\arraybackslash}p{8.5cm}|}
+\hline
+Parameter & Value & Meaning in this simulation \\
+\hline
+\texttt{tol} & \(10^{-7}\) & Convergence tolerance for the self-consistent Poisson loop. With the default absolute error criterion, the iteration stops when the maximum change in electrostatic potential between successive iterations is below \(10^{-7}\,\mathrm{V}\). \\
+\hline
+\texttt{initial\_ref\_factor} & 0.55 & Initial adaptive-refinement factor. It is dimensionless; values closer to zero force stronger mesh refinement after non-convergence, while values closer to one refine more conservatively. \\
+\hline
+\texttt{final\_ref\_factor} & 0.85 & Refinement factor used once the solver error has saturated. The high value means the final adaptive refinements are intentionally mild, avoiding an unnecessarily large mesh. \\
+\hline
+\texttt{min\_nodes} & 0 & No lower bound is imposed on the total number of mesh nodes. If the electrostatic solution converges, the adaptive procedure is allowed to stop even for a relatively small mesh. \\
+\hline
+\texttt{maxiter} & 1000 & Maximum number of self-consistent non-linear Poisson iterations before the solve is considered unsuccessful. This is larger than the QTCAD default and is useful at the very low operating temperature. \\
+\hline
+\texttt{refined\_region} & \texttt{dot\_region} & Region in which QTCAD enforces a maximum local mesh characteristic length. Here the enforced refinement is focused on the central dot stack. \\
+\hline
+\texttt{h\_refined} & 0.3 & Maximum characteristic mesh length in the regions listed in \texttt{refined\_region}. Since the mesh is loaded with a \(10^{-9}\) scaling factor and the Gmsh geometry is in nanometers, this corresponds to \(\SI{0.3}{\nano\meter}\). \\
+\hline
+\texttt{max\_nodes} & \(10^{10}\) & Upper bound on the number of mesh nodes allowed during adaptive refinement. This value is effectively non-limiting for the present calculation; the practical bound will be memory and runtime. \\
+\hline
+\end{tabular}
+\caption{Meaning of the Poisson solver parameters used in the adaptive calculation.}
+\label{tab:poisson_params}
+\end{table}
+
+Overall, the parameter set prioritizes a tight electrostatic convergence
+criterion and high spatial resolution in the quantum-dot region. The adaptive
+refinement is not globally aggressive: the high refinement factors and the
+absence of a minimum-node requirement avoid spending nodes in regions where the
+potential is smooth, while \texttt{h\_refined} guarantees a fine mesh in the
+central region that controls the double-dot confinement.
