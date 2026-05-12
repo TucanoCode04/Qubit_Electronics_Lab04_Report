@@ -6,6 +6,6 @@
 \contentsline {section}{\numberline {3.1}Simulation setup}{3}{}%
 \contentsline {section}{\numberline {3.2}Materials and regions}{4}{}%
 \contentsline {section}{\numberline {3.3}Poisson solver parameters}{4}{}%
-\contentsline {chapter}{\numberline {4}Quantum Dot Characterization via Paraview}{5}{}%
-\contentsline {section}{\numberline {4.1}Charge Density Distribution and Potential Map}{5}{}%
-\contentsline {section}{\numberline {4.2}Potential Profile Analysis}{6}{}%
+\contentsline {chapter}{\numberline {4}Quantum dot characterization with Paraview}{5}{}%
+\contentsline {section}{\numberline {4.1}Charge density distribution map}{5}{}%
+\contentsline {section}{\numberline {4.2}Potential profile analysis}{6}{}%
