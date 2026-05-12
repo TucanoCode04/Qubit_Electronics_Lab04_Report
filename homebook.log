@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.23)  12 MAY 2026 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.23)  12 MAY 2026 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -106,9 +106,6 @@ rs
 \f@nch@O@erf=\skip57
 \f@nch@O@olf=\skip58
 \f@nch@O@orf=\skip59
-)
-(C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/base\makeidx.sty
-Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
 )
 (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
@@ -414,13 +411,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
 (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/needspace\needspace.sty
 Package: needspace 2025/03/13 v1.3e reserve vertical space
-)
-\@indexfile=\write3
-\openout3 = `homebook.idx'.
-
-
-Writing index file homebook.idx
-(C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+) (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2024/01/14 v1.3d Standard LaTeX Color (DPC)
 
 (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -585,8 +576,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ))
-\tf@toc=\write4
-\openout4 = `homebook.toc'.
+\tf@toc=\write3
+\openout3 = `homebook.toc'.
 
 
 
@@ -618,7 +609,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--74
 [2 <./Images/2Dfullfigure.png>]
 Chapter 3.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-9.
+2.
 (C:\Users\donat\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -628,24 +619,40 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 
-[3{C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
-c}{C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}]
+[3{C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
+:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 
 [4{C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}])
+c}]) (Giacomo/es4.tex
+Chapter 4.
+<Images/EC45Z.png, id=42, 1565.85pt x 831.105pt>
+File: Images/EC45Z.png Graphic file (type png)
+<use Images/EC45Z.png>
+Package pdftex.def Info: Images/EC45Z.png  used on input line 9.
+(pdftex.def)             Requested size: 308.71104pt x 163.84659pt.
 
-[5] (homebook.aux)
+
+[5]
+<Images/ECPlot.png, id=48, 777.90625pt x 414.54875pt>
+File: Images/ECPlot.png Graphic file (type png)
+<use Images/ECPlot.png>
+Package pdftex.def Info: Images/ECPlot.png  used on input line 21.
+(pdftex.def)             Requested size: 308.71104pt x 164.5135pt.
+)
+
+[6 <./Images/EC45Z.png (PNG copy)> <./Images/ECPlot.png (PNG copy)>]
+(homebook.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15249 strings out of 473899
- 310231 string characters out of 5726499
- 715030 words of memory out of 5000000
- 37652 multiletter control sequences out of 15000+600000
- 681094 words of font info for 231 fonts, out of 8000000 for 9000
+ 15308 strings out of 473899
+ 311183 string characters out of 5726499
+ 717039 words of memory out of 5000000
+ 37660 multiletter control sequences out of 15000+600000
+ 692693 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,15n,131p,1007b,1288s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
@@ -656,15 +663,16 @@ b><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb
 C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C
 :/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
 Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Us
+ers/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Us
 ers/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Us
 ers/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Us
 ers/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/
 Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/
 Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/U
 sers/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on homebook.pdf (7 pages, 845733 bytes).
+Output written on homebook.pdf (8 pages, 1000528 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 95243 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 99349 words of extra memory for PDF output out of 106986 (max. 10000000)
 

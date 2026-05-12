@@ -1,11 +1,5 @@
 # Fdb version 4
-["makeindex homebook.idx"] 1778600290.5743 "homebook.idx" "homebook.ind" "homebook" 1778600881.42006 0
-  "homebook.idx" 1778600879 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  (generated)
-  "homebook.ilg"
-  "homebook.ind"
-  (rewritten before read)
-["pdflatex"] 1778600879.05732 "homebook.tex" "homebook.pdf" "homebook" 1778600881.42039 0
+["pdflatex"] 1778605109.52356 "c:/Users/donat/Desktop/QubitElectronics_Labs/Qubit_Electronics_Lab04_Report/homebook.tex" "homebook.pdf" "homebook" 1778605111.98876 0
   "C:/Users/donat/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774352199 82862 5cfc99bb35d1c98f6fcb48c5cfcd7edb ""
   "C:/Users/donat/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729692926 11948238 cef82a51cc5d8db5d373796a8632c032 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -28,6 +22,7 @@
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr5.tfm" 1256929440 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr7.tfm" 1256929440 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
+  "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmri10.tfm" 1256929440 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmss12.tfm" 1256929440 11232 955a7245396175d9219648eadc654ac9 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmss17.tfm" 1256929440 11252 57c8b53a3aeebba8c17658d4221d47ec ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ec-lmssbx10.tfm" 1256929440 11168 06d87f5698fd1b642d96449b7c8d90b0 ""
@@ -55,6 +50,7 @@
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb" 1256929440 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb" 1256929440 121145 00b210fbe9efd7ce850c04e64670de9a ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
+  "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1256929440 112593 fda2373ba4420af33949610de4c28fe8 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb" 1256929440 96107 daf52840b555e3b38f9679b629b5e2df ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb" 1256929440 97155 ffb6880a68751002f414154d64548ca3 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb" 1256929440 119663 1a3a2206591ddc98c6d6c6271a282516 ""
@@ -90,7 +86,6 @@
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/base/bk10.clo" 1719393830 8288 89d72b042f11f13c66cb97f0c9d55d3a ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/base/book.cls" 1719393830 23268 866793c4788723d271ce62bb0046a901 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty" 1719393830 5275 b64d8404d74d2860b9c6558239dd0784 ""
-  "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/base/makeidx.sty" 1719393830 1939 3225e20a81cec31e51c1e216d6385103 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty" 1696169587 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty" 1696169587 72619 ee90b6612147680fd73c3b1406a74245 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty" 1696169587 12494 0c0cdb824278a4d51cefeb2e79901315 ""
@@ -135,18 +130,20 @@
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/translations/dicts/translations-basic-dictionary-english.trsl" 1644048522 5588 0c1628daf15f4411ff1f463114c634a3 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Davide/es3.tex" 1778600854 7164 50200a8420f90f68a5cc6ce72e417476 ""
+  "Davide/es3.tex" 1778605108 8209 77382826c387d6bf9b16d0b47c77f55a ""
+  "Giacomo/es4.tex" 1778603658 2489 f98fda3722a9e5dd9cd7221bf6096f4b ""
   "Images/2Dfullfigure.png" 1778325491 399748 2a655ffd6b9ac690e15adb09bc7fdec7 ""
-  "homebook.aux" 1778600881 2411 deb712f42fba9c8adfd38a6aab208790 "pdflatex"
-  "homebook.ind" 1778600290 0 d41d8cd98f00b204e9800998ecf8427e "makeindex homebook.idx"
-  "homebook.tex" 1778320756 3195 2f85e29b2c69476693697dd3f694fbee ""
-  "homebook.toc" 1778600881 470 3f1bc554fc9328b06bb596bc476e5268 "pdflatex"
+  "Images/EC45Z.png" 1778147690 111061 bcc42f6fefdd49e27753029a19d05ddb ""
+  "Images/ECPlot.png" 1778148523 16956 4ac3a008b98c7f0771b085cf2a660fa9 ""
+  "c:/Users/donat/Desktop/QubitElectronics_Labs/Qubit_Electronics_Lab04_Report/homebook.tex" 1778603791 3236 d8dd774299127c6198a7a0597b76242a ""
+  "homebook.aux" 1778605111 3357 244234b0d58570b4da36adcd19301792 "pdflatex"
+  "homebook.tex" 1778603791 3236 d8dd774299127c6198a7a0597b76242a ""
+  "homebook.toc" 1778605111 727 375d7f6426a0967269936f46db632f5a "pdflatex"
   "intro/intro.tex" 1778320756 342 03f3eff5541c6e5f10ea367554abf424 ""
   "leo_part/leo_part.tex" 1778595918 4598 99f1aece77276d747744fff5c5eab130 ""
   "logopoli.png" 1777282392 312859 655543f184342f9809abd3950ec800c1 ""
   (generated)
   "homebook.aux"
-  "homebook.idx"
   "homebook.log"
   "homebook.pdf"
   "homebook.toc"

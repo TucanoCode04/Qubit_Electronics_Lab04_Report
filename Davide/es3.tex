@@ -2,27 +2,34 @@
 \chapter{Poisson}
 \section{Simulation setup}
 
-The Poisson stage starts from the three-dimensional SiMOS mesh. The device is
-instantiated as an electron device,
+The Poisson stage starts from the three-dimensional SiMOS mesh, which is
+converted into a QTCAD device configured for electron confinement:
 \begin{lstlisting}
 d = Device(mesh, conf_carriers="e")
 d.set_temperature(T)
 d.statistics = "FD_approx"
 \end{lstlisting}
-therefore the self-consistent charge density is evaluated for confined electrons
-using a Fermi--Dirac approximation at
+The option \texttt{conf\_carriers="e"} tells the solver that the mobile charge
+density to be computed is electronic. The temperature is set to
+\SI{15}{\milli\kelvin}, consistent with the cryogenic operating regime of the
+double quantum dot, and the Fermi--Dirac approximation is used to describe the
+occupation of the available electronic states during the self-consistent
+Poisson calculation:
 \[
     T = \SI{0.015}{\kelvin} = \SI{15}{\milli\kelvin}.
 \]
 
-The electrostatic biases are applied only through the surfaces declared with
-\texttt{new\_gate\_bnd}. Each gate boundary receives the same work-function
-offset,
+The electrostatic potential is controlled by the gate surfaces defined in the
+geometry rather than by assigning arbitrary voltages inside the device volume.
+Each surface declared with \texttt{new\_gate\_bnd} creates a boundary condition
+for one metallic gate, and all gates share the same work-function offset,
 \[
     \Phi_m = \chi_{\mathrm{Si}} + \frac{E_{g,\mathrm{Si}}}{2},
 \]
-corresponding to a mid-gap silicon reference. The voltages used in the
-simulation are summarized in Table~\ref{tab:poisson_voltages}.
+corresponding to a mid-gap silicon reference. The different voltages in
+Table~\ref{tab:poisson_voltages} then represent the intentional tuning knobs of
+the device: reservoir gates accumulate carriers, barrier gates control tunnel
+coupling, and plunger gates tune the energy levels of the two dots.
 
 \begin{table}[H]
 \centering
@@ -53,9 +60,13 @@ Boundary & Voltage (V) & Role \\
 \label{tab:poisson_voltages}
 \end{table}
 
-No ohmic boundary condition is imposed in this configuration. The reservoirs are
-therefore included through their material regions and controlled
-electrostatically by the reservoir gates listed above.
+Therefore, the simulation does not fix the carrier population through explicit
+source or drain ohmic contacts. The reservoirs are still present in the mesh
+and in the material definition, but their role is imposed indirectly through
+the high reservoir-gate voltages. This means that the formation of the
+accumulated regions and their coupling to the dot are determined by the
+electrostatic solution rather than by a separate ohmic-contact boundary
+condition.
 
 \section{Materials and regions}
 
@@ -89,11 +100,14 @@ The same region labels are then used to identify the central quantum-dot stack:
 \texttt{region\_quantum\_B\_mid},
 \texttt{region\_post\_quantum\_B\_mid}\}.
 \]
-This list does not introduce a new material; it selects part of the already
-defined mesh. When it is passed to \texttt{d.set\_dot\_region}, the central
-stack is kept out of the classical carrier-density calculation. This leaves the
-dot to be treated as a few-electron quantum region rather than as a classical
-electron gas that screens the gates.
+
+The definition of \texttt{dot\_region} is therefore a selection of the central
+quantum-dot volume, not an additional material assignment. By excluding this
+region from the classical charge-density calculation, QTCAD avoids treating
+the dot as a continuous electron gas with strong screening. This is important
+because the central region is expected to host only a small number of confined
+electrons, so its electrostatic behavior must remain compatible with a later
+quantum treatment instead of being fully classical.
 
 \section{Poisson solver parameters}
 
