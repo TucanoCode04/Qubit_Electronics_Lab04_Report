@@ -1,6 +1,6 @@
-PWD c:\Users\donat\Desktop\QubitElectronics_Labs\Qubit_Electronics_Lab04_Report
+PWD C:\Users\donat\Desktop\QubitElectronics_Labs\Qubit_Electronics_Lab04_Report
 INPUT C:\Users\donat\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\donat\Desktop\QubitElectronics_Labs\Qubit_Electronics_Lab04_Report\homebook.tex
+INPUT homebook.tex
 OUTPUT homebook.log
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\base\book.cls
@@ -257,10 +257,17 @@ INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\lm\ts1lmr.fd
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr8.tfm
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ts1-lmr8.tfm
+INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
+INPUT .\Images\2Dfullfigure.png
 INPUT .\Davide\es3.tex
 INPUT .\Davide\es3.tex
 INPUT Davide\es3.tex
-INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd
 INPUT C:\Users\donat\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmtt.fd

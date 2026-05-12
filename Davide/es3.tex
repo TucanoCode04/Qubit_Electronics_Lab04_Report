@@ -1,28 +1,27 @@
-\newpage
+
 \chapter{Poisson}
 \section{Simulation setup}
 
-The Poisson simulation is defined in \texttt{SiMOS\_poisson.py}. The device is
-loaded from the three-dimensional SiMOS mesh and instantiated as an electron
-device,
+The Poisson stage starts from the three-dimensional SiMOS mesh. The device is
+instantiated as an electron device,
 \begin{lstlisting}
 d = Device(mesh, conf_carriers="e")
 d.set_temperature(T)
 d.statistics = "FD_approx"
 \end{lstlisting}
 therefore the self-consistent charge density is evaluated for confined electrons
-using a Fermi--Dirac approximation. The operating temperature is
+using a Fermi--Dirac approximation at
 \[
     T = \SI{0.015}{\kelvin} = \SI{15}{\milli\kelvin}.
 \]
 
 The electrostatic biases are applied only through the surfaces declared with
-\texttt{new\_gate\_bnd}. The work-function parameter used for all gate
-boundaries is
+\texttt{new\_gate\_bnd}. Each gate boundary receives the same work-function
+offset,
 \[
     \Phi_m = \chi_{\mathrm{Si}} + \frac{E_{g,\mathrm{Si}}}{2},
 \]
-which corresponds to a mid-gap silicon reference. The voltages used in the
+corresponding to a mid-gap silicon reference. The voltages used in the
 simulation are summarized in Table~\ref{tab:poisson_voltages}.
 
 \begin{table}[H]
@@ -54,17 +53,17 @@ Boundary & Voltage (V) & Role \\
 \label{tab:poisson_voltages}
 \end{table}
 
-No ohmic boundary is active in the script, since the two corresponding
-\texttt{new\_ohmic\_bnd} lines are commented. The reservoirs are instead
-controlled electrostatically by the reservoir gates.
+No ohmic boundary condition is imposed in this configuration. The reservoirs are
+therefore included through their material regions and controlled
+electrostatically by the reservoir gates listed above.
 
 \section{Materials and regions}
 
-The material assignment is performed region by region before the boundary
-conditions are imposed. The code uses three QTCAD material objects, reported in
-Table~\ref{tab:poisson_materials}. The material choice enters the Poisson
-problem mainly through the dielectric response and, in the semiconductor, through
-the band parameters and carrier statistics used to compute the charge density.
+Before the boundary conditions are applied, each mesh region is assigned a
+material. This assignment fixes the dielectric response used by the Poisson
+equation; in silicon it also provides the band parameters needed to compute the
+electron density. The three QTCAD material objects used in the device are
+reported in Table~\ref{tab:poisson_materials}.
 
 \begin{table}[H]
 \centering
@@ -76,24 +75,25 @@ QTCAD material & Physical material & Use in the device \\
 \hline
 \texttt{mt.SiO2} & Silicon dioxide & Oxide regions immediately above the quantum layer and in the upper central stack. These regions act as insulating dielectrics and do not contribute mobile carriers. \\
 \hline
-\texttt{mt.Al2O3} & Aluminum oxide & Top oxide and gate-stack regions. The metallic action of the gates is not represented by assigning a metal material to the volume, but by imposing Dirichlet gate boundary conditions on the gate surfaces. \\
+\texttt{mt.Al2O3} & Aluminum oxide & Top oxide and gate-stack regions. The electrostatic action of the gates is imposed separately through the gate boundary conditions. \\
 \hline
 \end{tabular}
 \caption{Materials appearing in \texttt{SiMOS\_poisson.py}.}
 \label{tab:poisson_materials}
 \end{table}
 
-The quantum-dot region used by the solver is
+The same region labels are then used to identify the central quantum-dot stack:
 \[
 \texttt{dot\_region} =
 \{\texttt{region\_pre\_quantum\_B\_mid},
 \texttt{region\_quantum\_B\_mid},
 \texttt{region\_post\_quantum\_B\_mid}\}.
 \]
-This central stack is also passed to \texttt{d.set\_dot\_region}, so classical
-charge is suppressed there. This is consistent with treating the dot as a region
-where only few-electron quantum states should be described later, rather than as
-a classical electron gas that screens the gates.
+This list does not introduce a new material; it selects part of the already
+defined mesh. When it is passed to \texttt{d.set\_dot\_region}, the central
+stack is kept out of the classical carrier-density calculation. This leaves the
+dot to be treated as a few-electron quantum region rather than as a classical
+electron gas that screens the gates.
 
 \section{Poisson solver parameters}
 
@@ -118,7 +118,7 @@ Parameter & Value & Meaning in this simulation \\
 \hline
 \texttt{min\_nodes} & 0 & No lower bound is imposed on the total number of mesh nodes. If the electrostatic solution converges, the adaptive procedure is allowed to stop even for a relatively small mesh. \\
 \hline
-\texttt{maxiter} & 1000 & Maximum number of self-consistent non-linear Poisson iterations before the solve is considered unsuccessful. This is larger than the QTCAD default and is useful at the very low operating temperature. \\
+\texttt{maxiter} & 1000 & Maximum number of self-consistent non-linear Poisson iterations before the solve is considered unsuccessful. The high value leaves room for convergence at the low operating temperature used in the simulation. \\
 \hline
 \texttt{refined\_region} & \texttt{dot\_region} & Region in which QTCAD enforces a maximum local mesh characteristic length. Here the enforced refinement is focused on the central dot stack. \\
 \hline
@@ -131,9 +131,9 @@ Parameter & Value & Meaning in this simulation \\
 \label{tab:poisson_params}
 \end{table}
 
-Overall, the parameter set prioritizes a tight electrostatic convergence
-criterion and high spatial resolution in the quantum-dot region. The adaptive
-refinement is not globally aggressive: the high refinement factors and the
-absence of a minimum-node requirement avoid spending nodes in regions where the
-potential is smooth, while \texttt{h\_refined} guarantees a fine mesh in the
-central region that controls the double-dot confinement.
+Taken together, these settings make the solution accurate where the confinement
+potential is most sensitive, without forcing the whole mesh to the same
+resolution. The small tolerance controls the self-consistent potential, while
+\texttt{h\_refined} concentrates the finest elements in \texttt{dot\_region}.
+Away from the central stack, the relatively mild refinement factors allow the
+adaptive solver to keep a coarser mesh where the potential varies more smoothly.

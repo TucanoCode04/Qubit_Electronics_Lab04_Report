@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex homebook.idx"] 1778320763.28199 "homebook.idx" "homebook.ind" "homebook" 1778320872.68581 0
-  "homebook.idx" 1778320871 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex homebook.idx"] 1778600290.5743 "homebook.idx" "homebook.ind" "homebook" 1778600881.42006 0
+  "homebook.idx" 1778600879 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "homebook.ilg"
   "homebook.ind"
   (rewritten before read)
-["pdflatex"] 1778320871.39309 "c:/Users/donat/Desktop/QubitElectronics_Labs/Qubit_Electronics_Lab04_Report/homebook.tex" "homebook.pdf" "homebook" 1778320872.68623 0
+["pdflatex"] 1778600879.05732 "homebook.tex" "homebook.pdf" "homebook" 1778600881.42039 0
   "C:/Users/donat/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1774352199 82862 5cfc99bb35d1c98f6fcb48c5cfcd7edb ""
   "C:/Users/donat/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1729692926 11948238 cef82a51cc5d8db5d373796a8632c032 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -135,14 +135,14 @@
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/translations/dicts/translations-basic-dictionary-english.trsl" 1644048522 5588 0c1628daf15f4411ff1f463114c634a3 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/donat/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "Davide/es3.tex" 1778320869 7231 d84b5ba2ef69f725b1c05f3ee172af3a ""
-  "c:/Users/donat/Desktop/QubitElectronics_Labs/Qubit_Electronics_Lab04_Report/homebook.tex" 1778320756 3195 2f85e29b2c69476693697dd3f694fbee ""
-  "homebook.aux" 1778320872 2229 e357f5e4f9d2b3ce792692f39d22a4a6 "pdflatex"
-  "homebook.ind" 1778320763 0 d41d8cd98f00b204e9800998ecf8427e "makeindex homebook.idx"
+  "Davide/es3.tex" 1778600854 7164 50200a8420f90f68a5cc6ce72e417476 ""
+  "Images/2Dfullfigure.png" 1778325491 399748 2a655ffd6b9ac690e15adb09bc7fdec7 ""
+  "homebook.aux" 1778600881 2411 deb712f42fba9c8adfd38a6aab208790 "pdflatex"
+  "homebook.ind" 1778600290 0 d41d8cd98f00b204e9800998ecf8427e "makeindex homebook.idx"
   "homebook.tex" 1778320756 3195 2f85e29b2c69476693697dd3f694fbee ""
-  "homebook.toc" 1778320872 470 18548facb40419eb1d9a924ae4df1963 "pdflatex"
+  "homebook.toc" 1778600881 470 3f1bc554fc9328b06bb596bc476e5268 "pdflatex"
   "intro/intro.tex" 1778320756 342 03f3eff5541c6e5f10ea367554abf424 ""
-  "leo_part/leo_part.tex" 1778319368 2583 ac506fe11e275b2ac99e7bb7e5c9101a ""
+  "leo_part/leo_part.tex" 1778595918 4598 99f1aece77276d747744fff5c5eab130 ""
   "logopoli.png" 1777282392 312859 655543f184342f9809abd3950ec800c1 ""
   (generated)
   "homebook.aux"
