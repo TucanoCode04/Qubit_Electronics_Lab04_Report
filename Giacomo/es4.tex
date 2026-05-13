@@ -2,16 +2,16 @@
 
 To analyze the charge carrier confinement within the device, the simulation results were processed using Paraview. The following sections describe the charge density distribution and the resulting potential landscape.
 
-\section{Charge density distribution map}
-The distribution of the charge density was visualized by performing a \textit{Slice} operation on the 3D model. The slice was taken with a normal vector along the \textbf{Z-direction} at the coordinate \textbf{z = 45}, which corresponds to the active region of the SiMOS structure where the dots are formed.
+\section{Conduction band energy distribution}
+The conduction band energy distribution was visualized by performing a \textit{Slice} operation on the 3D model. The slice was taken with a normal vector along the \textbf{Z-direction} at the coordinate \textbf{z = 45}, which corresponds to the active region of the SiMOS structure where the dots are formed.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{Images/EC45Z.png}
-    \caption{Density charge map (Slice at $z=45$) showing the double quantum dot region.}
+    \caption{Conduction band energy map $E_c$ showing the electrostatic confinement potential for the double quantum dot.}
     \label{fig:charge_density_map}
 \end{figure}
 
-The map in Figure \ref{fig:charge_density_map} illustrates the spatial arrangement of the carriers. The regions characterized by a high concentration of charges are represented in \textbf{dark blue}, which corresponds to the reservoirs and the interior of the dots. Conversely, the areas in \textbf{intense red} represent a very low charge distribution, indicating the presence of electrostatic potential barriers that provide the necessary confinement. In the central area, two distinct charge accumulation zones are visible, identifying the double quantum dot system.
+The map in Figure \ref{fig:charge_density_map} illustrates the spatial arrangement of the potential energy levels. The regions characterized by the lowest energy are represented in dark blue, which corresponds to the potential wells of the reservoirs and the interior of the dots where electrons accumulate. Conversely, the areas in intense red represent high energy levels, indicating the presence of electrostatic potential barriers that provide the necessary confinement. In the central area, two distinct potential minima are visible, identifying the double quantum dot system.
 
 \section{Potential profile analysis}
 To further investigate the confinement, a \textit{Plot Over Line} was performed across the domain along the x-axis, at the fixed coordinates $y = 136.5$ and $z = 45$. This profile provides a quantitative view of the potential landscape through the centers of the two dots.
