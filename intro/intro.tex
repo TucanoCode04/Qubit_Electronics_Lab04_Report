@@ -1,7 +1,14 @@
 \chapter{Introduction}
 
-This laboratory focuses on mesh resolution and electrostatic simulation in a
-silicon MOS double quantum dot. Starting from the device geometry, the mesh
-density is analyzed in the quantum regions, then the non-linear Poisson equation
-is solved to study how the applied gate biases shape the conduction-band
-landscape.
+The objective of this laboratory is to study the electrostatic behaviour of a
+silicon MOS double quantum dot through a numerical simulation workflow. Starting
+from the device geometry, the report analyzes the structure of the mesh, the
+main material regions, and the role of the different electrostatic gates used to
+control the confinement potential.
+
+The simulation workflow uses Gmsh to define and inspect the device geometry and
+its mesh, while the non-linear Poisson equation is solved with gate boundary
+conditions corresponding to the reservoir, barrier, plunger, and lateral
+confinement electrodes. The resulting conduction-band energy profile is then
+visualized in ParaView through slices and line plots, allowing the formation and
+coupling of the two quantum dots to be analyzed.

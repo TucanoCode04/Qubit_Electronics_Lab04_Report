@@ -7,5 +7,5 @@
 \contentsline {section}{\numberline {3.2}Materials and regions}{4}{}%
 \contentsline {section}{\numberline {3.3}Poisson solver parameters}{4}{}%
 \contentsline {chapter}{\numberline {4}Quantum dot characterization with Paraview}{5}{}%
-\contentsline {section}{\numberline {4.1}Charge density distribution map}{5}{}%
+\contentsline {section}{\numberline {4.1}Conduction band energy distribution}{5}{}%
 \contentsline {section}{\numberline {4.2}Potential profile analysis}{6}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.23)  12 MAY 2026 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.10.23)  13 MAY 2026 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -540,15 +540,18 @@ Chapter 4.
 <Images/EC45Z.png, id=42, 1565.85pt x 831.105pt>
 File: Images/EC45Z.png Graphic file (type png)
 <use Images/EC45Z.png>
-Package pdftex.def Info: Images/EC45Z.png  used on input line 9.
+Package pdftex.def Info: Images/EC45Z.png  used on input line 10.
 (pdftex.def)             Requested size: 308.71104pt x 163.84659pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 
 
 [5]
 <Images/ECPlot.png, id=48, 777.90625pt x 414.54875pt>
 File: Images/ECPlot.png Graphic file (type png)
 <use Images/ECPlot.png>
-Package pdftex.def Info: Images/ECPlot.png  used on input line 21.
+Package pdftex.def Info: Images/ECPlot.png  used on input line 22.
 (pdftex.def)             Requested size: 308.71104pt x 164.5135pt.
 )
 
@@ -559,15 +562,15 @@ L3 programming layer <2024-09-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15300 strings out of 473899
- 311267 string characters out of 5726499
- 717025 words of memory out of 5000000
+ 15308 strings out of 473899
+ 311381 string characters out of 5726499
+ 717029 words of memory out of 5000000
  37660 multiletter control sequences out of 15000+600000
- 692057 words of font info for 258 fonts, out of 8000000 for 9000
+ 692497 words of font info for 263 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,15n,131p,1081b,1288s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss17.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/donat/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on homebook.pdf (8 pages, 999448 bytes).
+Output written on homebook.pdf (8 pages, 999519 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
